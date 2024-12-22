@@ -79,6 +79,11 @@ public:
     QLabel *label_18;
     QLabel *label_19;
     QLabel *label_20;
+    QLabel *label_21;
+    QLabel *label_22;
+    QLineEdit *lineEdit_18;
+    QLineEdit *lineEdit_17;
+    QLabel *label_23;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -86,7 +91,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1187, 862);
+        MainWindow->resize(1187, 915);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         formLayoutWidget = new QWidget(centralwidget);
@@ -166,7 +171,7 @@ public:
 
         tableWidget = new QTableWidget(centralwidget);
         tableWidget->setObjectName("tableWidget");
-        tableWidget->setGeometry(QRect(0, 530, 1181, 281));
+        tableWidget->setGeometry(QRect(0, 590, 1181, 281));
         widget = new QCustomPlot(centralwidget);
         widget->setObjectName("widget");
         widget->setGeometry(QRect(250, 30, 461, 451));
@@ -186,18 +191,18 @@ public:
         label_5->setFont(font2);
         pushButton_3 = new QPushButton(centralwidget);
         pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(240, 490, 941, 41));
+        pushButton_3->setGeometry(QRect(240, 500, 941, 71));
         pushButton_3->setFont(font2);
         scrollArea = new QScrollArea(centralwidget);
         scrollArea->setObjectName("scrollArea");
-        scrollArea->setGeometry(QRect(10, 190, 221, 341));
+        scrollArea->setGeometry(QRect(0, 190, 211, 401));
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 219, 339));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 209, 399));
         label_6 = new QLabel(scrollAreaWidgetContents);
         label_6->setObjectName("label_6");
-        label_6->setGeometry(QRect(70, 0, 71, 21));
+        label_6->setGeometry(QRect(70, 1, 71, 20));
         label_7 = new QLabel(scrollAreaWidgetContents);
         label_7->setObjectName("label_7");
         label_7->setGeometry(QRect(0, 20, 71, 20));
@@ -242,7 +247,7 @@ public:
         lineEdit_11->setGeometry(QRect(70, 260, 131, 21));
         lineEdit_12 = new QLineEdit(scrollAreaWidgetContents);
         lineEdit_12->setObjectName("lineEdit_12");
-        lineEdit_12->setGeometry(QRect(100, 310, 101, 21));
+        lineEdit_12->setGeometry(QRect(130, 310, 71, 21));
         label_13 = new QLabel(scrollAreaWidgetContents);
         label_13->setObjectName("label_13");
         label_13->setGeometry(QRect(0, 210, 71, 20));
@@ -276,6 +281,23 @@ public:
         label_20 = new QLabel(scrollAreaWidgetContents);
         label_20->setObjectName("label_20");
         label_20->setGeometry(QRect(50, 280, 16, 20));
+        label_21 = new QLabel(scrollAreaWidgetContents);
+        label_21->setObjectName("label_21");
+        label_21->setGeometry(QRect(0, 330, 111, 21));
+        label_21->setTextFormat(Qt::TextFormat::MarkdownText);
+        label_22 = new QLabel(scrollAreaWidgetContents);
+        label_22->setObjectName("label_22");
+        label_22->setGeometry(QRect(0, 370, 131, 21));
+        lineEdit_18 = new QLineEdit(scrollAreaWidgetContents);
+        lineEdit_18->setObjectName("lineEdit_18");
+        lineEdit_18->setGeometry(QRect(130, 370, 71, 21));
+        lineEdit_17 = new QLineEdit(scrollAreaWidgetContents);
+        lineEdit_17->setObjectName("lineEdit_17");
+        lineEdit_17->setGeometry(QRect(130, 350, 71, 21));
+        label_23 = new QLabel(scrollAreaWidgetContents);
+        label_23->setObjectName("label_23");
+        label_23->setGeometry(QRect(0, 350, 111, 21));
+        label_23->setTextFormat(Qt::TextFormat::MarkdownText);
         scrollArea->setWidget(scrollAreaWidgetContents);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -296,7 +318,7 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">\320\233\320\265\320\262\320\260\321\217 \320\263\321\200\320\260\320\275\320\270\321\206\320\260:</span></p></body></html>", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">\320\237\321\200\320\260\320\262\320\260\321\217 \320\263\321\200\320\260\320\275\320\270\321\206\320\260:</span></p></body></html>", nullptr));
-        label_3->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">\320\250\320\260\320\263</span></p></body></html>", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">\320\235\320\260\321\207\320\260\320\273\321\214\320\275\321\213\320\271 \321\210\320\260\320\263</span></p></body></html>", nullptr));
         label_16->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">\320\222\320\260\321\200\320\270\320\260\320\275\321\202 \321\200\320\265-\320\270\321\217</span></p></body></html>", nullptr));
         checkBox_2->setText(QCoreApplication::translate("MainWindow", "\320\221\320\265\320\267 \320\272\320\276\320\275\321\202\321\200\320\276\320\273\321\217", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "\320\222\320\262\320\265\321\201\321\202\320\270", nullptr));
@@ -320,6 +342,9 @@ public:
         label_18->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt; color:#000000;\">X:</span></p></body></html>", nullptr));
         label_19->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt; color:#000000;\">X:</span></p></body></html>", nullptr));
         label_20->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt; color:#000000;\">X:</span></p></body></html>", nullptr));
+        label_21->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">\320\224\320\276 \320\277\321\200\321\205\320\276\320\266\320\264\320\265\320\275\320\270\321\217</span></p></body></html>", nullptr));
+        label_22->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">\320\237\320\276\321\201\320\273\320\265 \320\277\320\276\320\263\321\200. \321\201\320\273\320\276\321\217:</span></p></body></html>", nullptr));
+        label_23->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">\320\277\320\276\320\263\321\200.\321\201\320\273\320\276\321\217:</span></p></body></html>", nullptr));
     } // retranslateUi
 
 };

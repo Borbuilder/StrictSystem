@@ -1841,8 +1841,8 @@ D:/Git/StristSystemQT/qcustomplot.h
  mdp:D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h
  mdp:D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h
 D:/Git/StristSystemQT/Solver.cpp
-D:/Git/StristSystemQT/qcustomplot.cpp
 D:/Git/StristSystemQT/main.cpp
+D:/Git/StristSystemQT/qcustomplot.cpp
 D:/Git/StristSystemQT/mainwindow.cpp
  uic:./ui_mainwindow.h
 D:/Git/StristSystemQT/errorgraph.h

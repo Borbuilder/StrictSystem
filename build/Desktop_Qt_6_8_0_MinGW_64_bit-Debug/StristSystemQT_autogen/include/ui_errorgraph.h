@@ -25,10 +25,10 @@ public:
     {
         if (ErrorGraph->objectName().isEmpty())
             ErrorGraph->setObjectName("ErrorGraph");
-        ErrorGraph->resize(601, 448);
+        ErrorGraph->resize(944, 552);
         widget = new QCustomPlot(ErrorGraph);
         widget->setObjectName("widget");
-        widget->setGeometry(QRect(10, 10, 581, 431));
+        widget->setGeometry(QRect(10, 10, 921, 531));
 
         retranslateUi(ErrorGraph);
 

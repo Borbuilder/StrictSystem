@@ -93,17 +93,48 @@ void Solver::SolveSystem()
 
 	exponents.push_back({ 1.0,1.0 });
     int inf_count{0};
+    int step_reduce{0};
 
-    while (x < b) {
+    while (x < b-0.000000001) {
 
 		if (solve_type == 1) {
-            //std::vector<double> old_v(v);
-            //bool step_is_not_ok{ true };
-            if(exp(-1000 * x) < pogran_control){
-                h = 0.0019;
+
+            if( exp(-1000 * x) < pogran_control){
+                ++step_reduce;
+
+                bool step_is_good{true};
+
+                if(step_reduce==50){
+                    h *=10.0;
+                }
+                else if(step_reduce==200){
+                    h *=10.0;
+                }
+                else if(step_reduce==300){
+                    h *=10.0;
+                }
+
+                if(h>=0.00199){
+                    step_is_good = false;
+                }
+
+                if(step_reduce>300 || step_is_good==false){
+                    h = 0.00199;
+                }
+
+                make_RK2_step(x, v, h);
+                ++steps_after_pg;
             }
-            make_RK2_step(x, v, h);
-            //step_is_not_ok = control_step(x, v, old_v, h);
+            else{
+                //std::vector<double> old_v(v);
+                //bool step_is_not_ok{ true };
+
+               // while(step_is_not_ok){
+                    make_RK2_step(x, v, h);
+                   // step_is_not_ok = control_step(x, v, old_v, h);
+               // }
+                ++steps_before_pg;
+            }
 
 		}
 		else if(solve_type == 0){
@@ -227,7 +258,12 @@ std::vector<std::vector<double>>& Solver::get_table()
             line[6] = fabs(numerical_results[i][2] - true_results[i][2]);
 			line[7] = exponents[i][0];
 			line[8] = exponents[i][1];
-			line[9] = numerical_results[i][3];
+            if(i==0){
+                line[9] = 0.0;
+            }
+            else{
+                line[9] = numerical_results[i][3];
+            }
 			table.push_back(line);
 		}
 	}

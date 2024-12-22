@@ -18,8 +18,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->tableWidget->setColumnCount(9);
-    ui->tableWidget->setHorizontalHeaderLabels(QStringList()<< "x" << "v1" << "v2" << "u1" << "u2"<< "E1" << "E2" << "e^(-0.01*x)" << "e^(-1000*x)");
+    ui->tableWidget->setColumnCount(10);
+    ui->tableWidget->setHorizontalHeaderLabels(QStringList()<< "x" << "v1" << "v2" << "u1" << "u2"<< "E1" << "E2" << "e^(-0.01*x)" << "e^(-1000*x)"<< "Шаг");
 }
 
 MainWindow::~MainWindow()
@@ -111,8 +111,8 @@ void MainWindow::on_pushButton_clicked()
         solve_type = 0;
     }
 
-    if(step<=0 || step>0.0001){
-       QMessageBox::critical(this,"Предупреждение","Для более точного прохождения погран.слоя \n шаг можно выставить в диапозоне (0.0001, 0.000001)");
+    if(step>0.000001){
+       QMessageBox::critical(this,"Предупреждение","При таком шаге погрешность > 10^-7 \n Чтобы получить погрешность <= 10^-7 уменьшите шаг минимум до 0.000001");
     }
 
     on_pushButton_is_clicked = true;
@@ -164,11 +164,13 @@ void MainWindow::on_pushButton_2_clicked()
             ui->lineEdit_9->setText(QString::number(solution.get_max_e2()));
             ui->lineEdit_10->setText(QString::number(solution.get_min_e1()));
             ui->lineEdit_11->setText(QString::number(solution.get_min_e2()));
-            ui->lineEdit_12->setText(QString::number(solution.get_step_count()));
+            ui->lineEdit_12->setText(QString::number(solution.get_step_count()+1));
             ui->lineEdit_13->setText(QString::number(solution.get_max_e1_x()));
             ui->lineEdit_14->setText(QString::number(solution.get_max_e2_x()));
             ui->lineEdit_15->setText(QString::number(solution.get_min_e1_x()));
             ui->lineEdit_16->setText(QString::number(solution.get_min_e2_x()));
+            ui->lineEdit_17->setText(QString::number(solution.get_steps_before_pg()));
+            ui->lineEdit_18->setText(QString::number(solution.get_steps_after_pg()+1));
         }
     }
     else{
